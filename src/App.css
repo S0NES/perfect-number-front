@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #363431;
+  color: #dfe0df;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  height: 100vh;
 }
-
-.App-link {
-  color: #61dafb;
+h1{
+  margin-bottom: 3rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  display: grid; 
+  width: 20%;
+  padding: 1rem 2rem;
+  background: #f2f2f2;
+  position: relative;
+  border-radius: 0.9rem;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 0.5fr 1fr 0.5fr; 
+}
+.find-area{
+  grid-template-areas: 
+    "numberInput numberInput"
+    "result result"
+    "search search"; 
+}
+.between-area{
+  grid-template-areas: 
+    "minNumber maxNumber"
+    "result result"
+    "search search"; 
+}
+.card::before{
+  position: absolute;
+  content: '';
+  width: 110%;
+  height: 120%;
+  top: -10%;
+  right: -5%;
+  background: rgba(161, 156, 156, 0.267);
+  border-radius: 1rem;
+  z-index: -10;
+}
+#result { 
+  grid-area: result;
+  min-height: 3rem;
+  color: #5e5e5e;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.6rem auto;
+}
+input[type="number"]{
+  width: 60%;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #363431;
+  border-radius: 0.1rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+#minNumber { 
+  grid-area: minNumber;
+}
+#maxNumber { 
+  grid-area: maxNumber;
+}
+#search { 
+  grid-area: search; 
+  border: 0;
+  border-radius: 1rem;
+  background-color: #f59f18;
+  margin: 0 auto;
+  width: 20%;
+  cursor: pointer;
+}
+#search:hover{
+  background-color: #ca8414;
+  color: #f2f2f2;
+}
+#numberInput{
+  grid-area: numberInput;
+}
+#toggleBtn{
+  position: absolute;
+  z-index: 999;
+  border: 0;
+  top: 45%;
+  right: 36%;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
 }

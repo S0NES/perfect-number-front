@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import PerfectNumberBetween from './component/PerfectNumberBetween';
+import FindPerfectNumber from './component/FindPerfectNumber';
+import { ReactComponent as Change } from './assets/change.svg';
 
 function App() {
+  const [isShowing, setIsShowing] = useState<boolean>(true);
+
+  const toggle = () => {
+    setIsShowing(current => !current);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <main className="app">
+          <button onClick={toggle} id="toggleBtn">
+            <Change width={20} height={20} />
+          </button>
+
+          {isShowing && <PerfectNumberBetween/>} 
+          {!isShowing && <FindPerfectNumber/>}
+        </main>
+    </>
   );
 }
 
