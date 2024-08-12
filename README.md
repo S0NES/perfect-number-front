@@ -10,7 +10,7 @@ Ex: 1+2+3 = 6 || 1+2+4+7+14=28.
 
 ## How to Run
 
-This project is the frontend. the [backend] is in another repository. in in this [Link](https://github.com/S0NES/perfect-number-backend/new/master?filename=README.md)
+This project is the frontend. the [backend] is in another repository. in in this [Link](https://github.com/S0NES/perfect-number-backend)
 
 After cloning you need to run the command.
 
